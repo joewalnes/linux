@@ -55,6 +55,7 @@ int aa_calc_profile_hash(struct aa_profile *profile, u32 version, void *start,
 	error = crypto_shash_update(&desc.shash, (u8 *) &le32_version, 4);
 	if (error)
 		goto fail;
+		goto fail;
 	error = crypto_shash_update(&desc.shash, (u8 *) start, len);
 	if (error)
 		goto fail;
